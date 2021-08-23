@@ -3,7 +3,8 @@ from tkinter import ttk
 import tkinter as tk
 import random
 from tkinter import PhotoImage
-from PIL import Image,ImageTk
+from tkinter import messagebox
+from PIL import Image, ImageTk
 
 
 d = 0
@@ -22,7 +23,7 @@ class Aplicacion(Frame):
 
         self.root.geometry('800x600')
         self.root.resizable(width=False, height=False)
-        self.root.title('Jerarquía Table Manager Alpha 1.0')
+        self.root.title('Jerarquía Table Manager Alpha 1.1')
 
         photo = PhotoImage(file = "dado.png")
         self.root.iconphoto(False, photo)
@@ -151,12 +152,14 @@ class Aplicacion(Frame):
         res8.place(x= 623, y=410)
 
 
-        #Funciones de ATAQUE
+        #Funciones de ATAQUE NORMAL
         def atk1():
             dado1 = random.randrange(1,7)
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c1.get() == '' or ce1.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_1 = (dado1 + dado2 + int(c1.get())) - int(ce1.get())
             print("El resultado de la tirada: ", res_atk_1)
             res1.config(text=res_atk_1)
@@ -169,6 +172,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c2.get() == '' or ce2.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_2 = (dado1 + dado2 + int(c2.get())) - int(ce2.get())
             print("El resultado de la tirada: ", res_atk_2)
             res2.config(text=res_atk_2)
@@ -181,6 +186,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c3.get() == '' or ce3.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_3 = (dado1 + dado2 + int(c3.get())) - int(ce3.get())
             print("El resultado de la tirada: ", res_atk_3)
             res3.config(text=res_atk_3)
@@ -193,6 +200,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c4.get() == '' or ce4.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_4 = (dado1 + dado2 + int(c4.get())) - int(ce4.get())
             print("El resultado de la tirada: ", res_atk_4)
             res4.config(text=res_atk_4)
@@ -205,6 +214,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c5.get() == '' or ce5.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_5 = (dado1 + dado2 + int(c5.get())) - int(ce5.get())
             print("El resultado de la tirada: ", res_atk_5)
             res5.config(text=res_atk_5)
@@ -217,6 +228,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c6.get() == '' or ce6.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_6 = (dado1 + dado2 + int(c6.get())) - int(ce6.get())
             print("El resultado de la tirada: ", res_atk_6)
             res6.config(text=res_atk_6)
@@ -229,6 +242,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c7.get() == '' or ce7.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_7 = (dado1 + dado2 + int(c7.get())) - int(ce7.get())
             print("El resultado de la tirada: ", res_atk_7)
             res7.config(text=res_atk_7)
@@ -241,6 +256,8 @@ class Aplicacion(Frame):
             dado2 = random.randrange(1,7)
             print(dado1)
             print(dado2)
+            if c8.get() == '' or ce8.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_atk_8 = (dado1 + dado2 + int(c8.get())) - int(ce8.get())
             print("El resultado de la tirada: ", res_atk_8)
             res8.config(text=res_atk_8)
@@ -248,10 +265,13 @@ class Aplicacion(Frame):
             dado_text2.config(text=dado2)
             dado_text3.config(text=0)
 
+
         #Funciones de DEFENSA
         def def1():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d1.get() == '' or ce1.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_1 = int(ce1.get()) - (int(d1.get()) + dado1)
             print("El resultado de la tirada: ", res_def_1)
             res1.config(text=res_def_1)
@@ -262,6 +282,8 @@ class Aplicacion(Frame):
         def def2():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d2.get() == '' or ce2.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_2 = int(ce2.get()) - (int(d2.get()) + dado1)
             print("El resultado de la tirada: ",  res_def_2)
             res2.config(text= res_def_2)
@@ -272,6 +294,8 @@ class Aplicacion(Frame):
         def def3():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d3.get() == '' or ce3.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_3 = int(ce3.get()) - (int(d3.get()) + dado1)
             print("El resultado de la tirada: ", res_def_3)
             res3.config(text=res_def_3)
@@ -282,6 +306,8 @@ class Aplicacion(Frame):
         def def4():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d4.get() == '' or ce4.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_4 = int(ce4.get()) - (int(d4.get()) + dado1)
             print("El resultado de la tirada: ", res_def_4)
             res4.config(text=res_def_4)
@@ -292,6 +318,8 @@ class Aplicacion(Frame):
         def def5():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d5.get() == '' or ce5.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_5 = int(ce5.get()) - (int(d5.get()) + dado1)
             print("El resultado de la tirada: ", res_def_5)
             res5.config(text=res_def_5)
@@ -302,6 +330,8 @@ class Aplicacion(Frame):
         def def6():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d6.get() == '' or ce6.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_6 = int(ce6.get()) - (int(d6.get()) + dado1)
             print("El resultado de la tirada: ", res_def_6)
             res6.config(text=res_def_6)
@@ -312,6 +342,8 @@ class Aplicacion(Frame):
         def def7():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d7.get() == '' or ce7.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_7 = int(ce7.get()) - (int(d7.get()) + dado1)
             print("El resultado de la tirada: ", res_def_7)
             res7.config(text=res_def_7)
@@ -322,6 +354,8 @@ class Aplicacion(Frame):
         def def8():
             dado1 = random.randrange(1,9)
             print(dado1)
+            if d8.get() == '' or ce8.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
             res_def_8 = int(ce8.get()) - (int(d8.get()) + dado1)
             print("El resultado de la tirada: ", res_def_8)
             res8.config(text=res_def_8)
@@ -329,27 +363,169 @@ class Aplicacion(Frame):
             dado_text2.config(text=0)
             dado_text3.config(text=0)
 
+        #Funciones de ATAQUE MÁGICO
+        def matk1():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c1.get() == '' or ce1.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_1 = (dado1 + dado2 + dado3 + int(c1.get())) - int(ce1.get())
+            
+            print("El resultado de la tirada: ", res_matk_1)
+            res1.config(text=res_matk_1)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+        def matk2():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c2.get() == '' or ce2.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_2= (dado1 + dado2 + dado3 + int(c2.get())) - int(ce2.get())
+            print("El resultado de la tirada: ", res_matk_2)
+            res1.config(text=res_matk_2)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+        def matk3():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c3.get() == '' or ce3.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_3 = (dado1 + dado2 + dado3 + int(c3.get())) - int(ce3.get())
+            print("El resultado de la tirada: ", res_matk_3)
+            res1.config(text=res_matk_3)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+            
+        def matk4():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c4.get() == '' or ce4.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_4 = (dado1 + dado2 + dado3 + int(c4.get())) - int(ce4.get())
+            print("El resultado de la tirada: ", res_matk_4)
+            res1.config(text=res_matk_4)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+        def matk5():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c5.get() == '' or ce5.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_5 = (dado1 + dado2 + dado3 + int(c5.get())) - int(ce5.get())
+            print("El resultado de la tirada: ", res_matk_5)
+            res1.config(text=res_matk_5)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+        def matk6():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c6.get() == '' or ce6.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_6 = (dado1 + dado2 + dado3 + int(c6.get())) - int(ce6.get())
+            print("El resultado de la tirada: ", res_matk_6)
+            res1.config(text=res_matk_6)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+        def matk7():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c7.get() == '' or ce7.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_7 = (dado1 + dado2 + dado3 + int(c7.get())) - int(ce7.get())
+            print("El resultado de la tirada: ", res_matk_7)
+            res1.config(text=res_matk_7)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+        def matk8():
+            dado1 = random.randrange(1,7)
+            dado2 = random.randrange(1,7)
+            dado3 = random.randrange(1,7)
+            print(dado1)
+            print(dado2)
+            print(dado3)
+            if c8.get() == '' or ce8.get() == '':
+                messagebox.showerror(message='Falta uno o más valores para ingresar.', title='Error de datos.')
+            res_matk_8 = (dado1 + dado2 + dado3 + int(c8.get())) - int(ce8.get())
+            print("El resultado de la tirada: ", res_matk_8)
+            res1.config(text=res_matk_8)
+            dado_text1.config(text=dado1)
+            dado_text2.config(text=dado2)
+            dado_text3.config(text=dado3)
+
+
         #Botones de ataque
         img_atk = PhotoImage(file='attack.png')
-        self.atk_button1 = tk.Button(self.root, image=img_atk, command=atk1).place(x=360, y=60)
-        self.atk_button2 = tk.Button(self.root, image=img_atk, command=atk2).place(x=360, y=110)
-        self.atk_button3 = tk.Button(self.root, image=img_atk, command=atk3).place(x=360, y=160)
-        self.atk_button4 = tk.Button(self.root, image=img_atk, command=atk4).place(x=360, y=210)
-        self.atk_button5 = tk.Button(self.root, image=img_atk, command=atk5).place(x=360, y=260)
-        self.atk_button6 = tk.Button(self.root, image=img_atk, command=atk6).place(x=360, y=310)
-        self.atk_button7 = tk.Button(self.root, image=img_atk, command=atk7).place(x=360, y=360)
-        self.atk_button8 = tk.Button(self.root, image=img_atk, command=atk8).place(x=360, y=410)
+        self.atk_button1 = tk.Button(self.root, image=img_atk, command=atk1).place(x=340, y=60)
+        self.atk_button2 = tk.Button(self.root, image=img_atk, command=atk2).place(x=340, y=110)
+        self.atk_button3 = tk.Button(self.root, image=img_atk, command=atk3).place(x=340, y=160)
+        self.atk_button4 = tk.Button(self.root, image=img_atk, command=atk4).place(x=340, y=210)
+        self.atk_button5 = tk.Button(self.root, image=img_atk, command=atk5).place(x=340, y=260)
+        self.atk_button6 = tk.Button(self.root, image=img_atk, command=atk6).place(x=340, y=310)
+        self.atk_button7 = tk.Button(self.root, image=img_atk, command=atk7).place(x=340, y=360)
+        self.atk_button8 = tk.Button(self.root, image=img_atk, command=atk8).place(x=340, y=410)
 
         #Botones de defensa
         img_def = PhotoImage(file='deffense.png')
-        self.atk_button1 = tk.Button(self.root, image=img_def, command=def1).place(x=400, y=60)
-        self.atk_button2 = tk.Button(self.root, image=img_def, command=def2).place(x=400, y=110)
-        self.atk_button3 = tk.Button(self.root, image=img_def, command=def3).place(x=400, y=160)
-        self.atk_button4 = tk.Button(self.root, image=img_def, command=def4).place(x=400, y=210)
-        self.atk_button5 = tk.Button(self.root, image=img_def, command=def5).place(x=400, y=260)
-        self.atk_button6 = tk.Button(self.root, image=img_def, command=def6).place(x=400, y=310)
-        self.atk_button7 = tk.Button(self.root, image=img_def, command=def7).place(x=400, y=360)
-        self.atk_button8 = tk.Button(self.root, image=img_def, command=def8).place(x=400, y=410)
+        self.atk_button1 = tk.Button(self.root, image=img_def, command=def1).place(x=380, y=60)
+        self.atk_button2 = tk.Button(self.root, image=img_def, command=def2).place(x=380, y=110)
+        self.atk_button3 = tk.Button(self.root, image=img_def, command=def3).place(x=380, y=160)
+        self.atk_button4 = tk.Button(self.root, image=img_def, command=def4).place(x=380, y=210)
+        self.atk_button5 = tk.Button(self.root, image=img_def, command=def5).place(x=380, y=260)
+        self.atk_button6 = tk.Button(self.root, image=img_def, command=def6).place(x=380, y=310)
+        self.atk_button7 = tk.Button(self.root, image=img_def, command=def7).place(x=380, y=360)
+        self.atk_button8 = tk.Button(self.root, image=img_def, command=def8).place(x=380, y=410)
+
+        #Botones de ataque mágico
+        img_matk = PhotoImage(file='attack.png')
+        self.matk_button1 = tk.Button(self.root, image=img_matk,command=matk1).place(x=420, y=60)
+        self.matk_button2 = tk.Button(self.root, image=img_matk,command=matk2).place(x=420, y=110)
+        self.matk_button3 = tk.Button(self.root, image=img_matk,command=matk3).place(x=420, y=160)
+        self.matk_button4 = tk.Button(self.root, image=img_matk,command=matk4).place(x=420, y=210)
+        self.matk_button5 = tk.Button(self.root, image=img_matk,command=matk5).place(x=420, y=260)
+        self.matk_button6 = tk.Button(self.root, image=img_matk,command=matk6).place(x=420, y=310)
+        self.matk_button7 = tk.Button(self.root, image=img_matk,command=matk7).place(x=420, y=360)
+        self.matk_button8 = tk.Button(self.root, image=img_matk,command=matk8).place(x=420, y=410)
 
         
         
