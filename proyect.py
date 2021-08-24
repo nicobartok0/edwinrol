@@ -517,7 +517,7 @@ class Aplicacion(Frame):
         self.atk_button8 = tk.Button(self.root, image=img_def, command=def8).place(x=380, y=410)
 
         #Botones de ataque mágico
-        img_matk = PhotoImage(file='attack.png')
+        img_matk = PhotoImage(file='magic_attack.png')
         self.matk_button1 = tk.Button(self.root, image=img_matk,command=matk1).place(x=420, y=60)
         self.matk_button2 = tk.Button(self.root, image=img_matk,command=matk2).place(x=420, y=110)
         self.matk_button3 = tk.Button(self.root, image=img_matk,command=matk3).place(x=420, y=160)
