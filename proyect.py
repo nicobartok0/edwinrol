@@ -9,7 +9,7 @@ from PIL import Image, ImageTk
 
 d = 0
 
-class Aplicacion(Frame):
+class Aplicacion(ttk.Frame):
     
     
     def __init__(self, master=None):
@@ -125,32 +125,40 @@ class Aplicacion(Frame):
         ce8.place(x=497, y=410, width=40)
 
         #Resultados
-        resultadosEtq = tk.Label(self.root, text= "Resultados").place(x= 600, y=10)
+        tk.Label(self.root, text= "Resultados").place(x= 680, y=10)
     
         res1 = tk.Label(self.root,text=0)
-        res1.place(x= 623, y=60)
+        res1.place(x= 703, y=60)
         
         res2 = tk.Label(self.root,text=0)
-        res2.place(x= 623, y=110)
+        res2.place(x= 703, y=110)
         
         res3 = tk.Label(self.root,text=0)
-        res3.place(x= 623, y=160)
+        res3.place(x= 703, y=160)
         
         res4 = tk.Label(self.root,text=0)
-        res4.place(x= 623, y=210)
+        res4.place(x= 703, y=210)
         
         res5 = tk.Label(self.root,text=0)
-        res5.place(x= 623, y=260)
+        res5.place(x= 703, y=260)
         
         res6 = tk.Label(self.root,text=0)
-        res6.place(x= 623, y=310)
+        res6.place(x= 703, y=310)
         
         res7 = tk.Label(self.root,text=0)
-        res7.place(x= 623, y=360)
+        res7.place(x= 703, y=360)
         
         res8 = tk.Label(self.root,text=0)
-        res8.place(x= 623, y=410)
+        res8.place(x= 703, y=410)
 
+        #Bonificaciones de armadura
+        tk.Label(self.root, text='Bonif.').place(x= 595, y=10)
+        
+        bon1 = ttk.Combobox(self, state='readonly')
+        bon1.place(x=200,y=200)
+        bon1.configure(width=2, height=2)
+        bon1["values"] = [0, 10, 20, 30]
+        
 
         #Funciones de ATAQUE NORMAL
         def atk1():
